@@ -6,8 +6,8 @@ import connectDB from "./config/db.js";
 import authRoute from "./routes/authRoute.js";
 import catergoryRoutes from "./routes/catergoryRoute.js";
 import productRoutes from "./routes/productRoutes.js";
-import cors from "cors";
-import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 // Configure dotenv
 dotenv.config();
@@ -17,6 +17,8 @@ connectDB();
 
 // Create an Express app
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Middleware
 app.use(cors());
