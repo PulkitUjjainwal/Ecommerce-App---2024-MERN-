@@ -22,6 +22,7 @@ const __dirname = dirname(__filename);
 
 // Middleware
 app.use(cors());
+app.options("*", cors());
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "./client/build")));
